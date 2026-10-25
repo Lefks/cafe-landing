@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumen Coffee — Specialty coffee & brunch (demo)</title>
+  <meta name="description" content="Demo landing page for a specialty coffee shop.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { serif: ['Fraunces', 'serif'], sans: ['Inter', 'sans-serif'] },
+          colors: { bean: '#3b2a20', cream: '#f7f1e8', latte: '#c8a27a', moss: '#5b6b4e' }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .cup { background: radial-gradient(circle at 50% 40%, #6b4a35 0 38%, #3b2a20 39% 46%, #f7f1e8 47% 100%); }
+  </style>
+</head>
+<body class="bg-cream text-bean font-sans antialiased">
+
+  <div class="bg-bean text-cream text-center text-xs py-2 px-4">Demo project — fictional business, built to showcase web design.</div>
+
+  <header class="sticky top-0 z-20 bg-cream/90 backdrop-blur border-b border-bean/10">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-4 py-4">
+      <a href="#" class="font-serif text-2xl font-bold">Lumen<span class="text-latte">.</span></a>
+      <button id="menuBtn" class="md:hidden p-2" aria-label="Open menu">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <ul id="menu" class="hidden md:flex gap-8 text-sm font-medium">
+        <li><a href="#menu-section" class="hover:text-latte">Menu</a></li>
+        <li><a href="#about" class="hover:text-latte">About</a></li>
+        <li><a href="#reviews" class="hover:text-latte">Reviews</a></li>
+        <li><a href="#visit" class="hover:text-latte">Visit</a></li>
+      </ul>
+    </nav>
+    <ul id="mobileMenu" class="hidden md:hidden flex-col gap-4 px-4 pb-4 text-sm font-medium">
+      <li><a href="#menu-section">Menu</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+  </header>
+
+  <section class="max-w-6xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <p class="uppercase tracking-widest text-xs text-moss font-semibold mb-4">Specialty coffee · Brunch · Since 2019</p>
+      <h1 class="font-serif text-4xl md:text-6xl font-bold leading-tight mb-6">Slow mornings,<br>serious coffee.</h1>
+      <p class="text-lg text-bean/80 mb-8 max-w-md">Single-origin beans roasted in small batches, fresh pastries every morning and a quiet corner for your laptop.</p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#menu-section" class="bg-bean text-cream px-6 py-3 rounded-full font-medium hover:bg-bean/90">See the menu</a>
+        <a href="#visit" class="border border-bean px-6 py-3 rounded-full font-medium hover:bg-bean hover:text-cream">Find us</a>
+      </div>
+    </div>
+    <div class="flex justify-center">
+      <div class="cup w-64 h-64 md:w-80 md:h-80 rounded-full shadow-2xl"></div>
+    </div>
+  </section>
+
+  <section id="menu-section" class="bg-white py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="font-serif text-3xl md:text-4xl font-bold mb-2">Menu</h2>
+      <p class="text-bean/70 mb-10">Our favourites. Full menu in store.</p>
+      <div class="flex gap-2 mb-8 flex-wrap" id="tabs">
+        <button data-tab="coffee" class="tab px-4 py-2 rounded-full text-sm font-medium bg-bean text-cream">Coffee</button>
+        <button data-tab="brunch" class="tab px-4 py-2 rounded-full text-sm font-medium bg-cream">Brunch</button>
+        <button data-tab="sweet" class="tab px-4 py-2 rounded-full text-sm font-medium bg-cream">Sweet</button>
+      </div>
+      <div id="menuGrid" class="grid sm:grid-cols-2 gap-x-12 gap-y-6"></div>
+    </div>
+  </section>
+
+  <section id="about" class="max-w-6xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-3 gap-8">
+    <div class="p-8 rounded-2xl bg-white shadow-sm">
+      <div class="text-3xl mb-4">☕</div>
+      <h3 class="font-serif text-xl font-bold mb-2">Roasted in-house</h3>
+      <p class="text-bean/70">Every bag is roasted on Tuesday and Friday, so your cup is never older than a few days.</p>
+    </div>
+    <div class="p-8 rounded-2xl bg-white shadow-sm">
+      <div class="text-3xl mb-4">🥐</div>
+      <h3 class="font-serif text-xl font-bold mb-2">Baked at 6 a.m.</h3>
+      <p class="text-bean/70">Croissants, cardamom buns and sourdough from our own oven, every single morning.</p>
+    </div>
+    <div class="p-8 rounded-2xl bg-white shadow-sm">
+      <div class="text-3xl mb-4">💻</div>
+      <h3 class="font-serif text-xl font-bold mb-2">Work-friendly</h3>
+      <p class="text-bean/70">Fast Wi-Fi, sockets at every table and a quiet zone upstairs until 2 p.m.</p>
+    </div>
+  </section>
+
+  <section id="reviews" class="bg-moss text-cream py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="font-serif text-3xl md:text-4xl font-bold mb-10">What guests say</h2>
+      <blockquote id="review" class="text-xl md:text-2xl font-serif min-h-[6rem] transition-opacity duration-500"></blockquote>
+      <p id="reviewer" class="mt-4 text-cream/70 text-sm"></p>
+      <div class="flex justify-center gap-2 mt-6" id="dots"></div>
+      <p class="mt-8 text-xs text-cream/50">Sample reviews for demo purposes.</p>
+    </div>
+  </section>
+
+  <section id="visit" class="max-w-6xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-12">
+    <div>
+      <h2 class="font-serif text-3xl md:text-4xl font-bold mb-6">Visit us</h2>
+      <p class="mb-2"><strong>Address:</strong> 12 Example Street, Old Town</p>
+      <p class="mb-6"><strong>Phone:</strong> +000 000 000 000</p>
+      <table class="text-sm w-full max-w-xs">
+        <tr><td class="py-1">Mon – Fri</td><td class="text-right">7:30 – 19:00</td></tr>
+        <tr><td class="py-1">Saturday</td><td class="text-right">9:00 – 18:00</td></tr>
+        <tr><td class="py-1">Sunday</td><td class="text-right">9:00 – 15:00</td></tr>
+      </table>
+      <p id="openNow" class="mt-6 inline-block px-4 py-2 rounded-full text-sm font-medium"></p>
+    </div>
+    <form id="contactForm" class="bg-white p-8 rounded-2xl shadow-sm space-y-4">
+      <h3 class="font-serif text-xl font-bold">Book a table for a group</h3>
+      <input required name="name" placeholder="Your name" class="w-full border border-bean/20 rounded-lg px-4 py-3">
+      <input required type="email" name="email" placeholder="Email" class="w-full border border-bean/20 rounded-lg px-4 py-3">
+      <textarea required name="message" rows="3" placeholder="Date, time and number of guests" class="w-full border border-bean/20 rounded-lg px-4 py-3"></textarea>
+      <button class="w-full bg-bean text-cream py-3 rounded-full font-medium hover:bg-bean/90">Send request</button>
+      <p id="formMsg" class="text-sm text-moss hidden">Thanks! (Demo: nothing was actually sent.)</p>
+    </form>
+  </section>
+
+  <footer class="border-t border-bean/10 py-8 text-center text-sm text-bean/60">
+    © <span id="year"></span> Lumen Coffee — demo project
+  </footer>
+
+  <script>
+    const menu = {
+      coffee: [['Espresso', 'Single origin, rotating weekly', '2.40'], ['Flat white', 'Double ristretto, silky milk', '3.60'], ['V60 pour-over', 'Ask about today\'s beans', '4.20'], ['Iced oat latte', 'House oat milk, light sweetness', '4.10']],
+      brunch: [['Shakshuka', 'Eggs, spiced tomato, sourdough', '9.50'], ['Avocado toast', 'Feta, chili, lime, poached egg', '8.90'], ['Granola bowl', 'Greek yogurt, berries, honey', '6.80'], ['Croque madame', 'Ham, gruyère, béchamel, egg', '9.20']],
+      sweet: [['Cardamom bun', 'Our signature, baked daily', '3.20'], ['Butter croissant', 'Laminated in-house', '2.60'], ['Basque cheesecake', 'Burnt top, creamy centre', '4.80'], ['Brownie', 'Dark chocolate, sea salt', '3.40']]
+    };
+    function renderMenu(tab) {
+      document.getElementById('menuGrid').innerHTML = menu[tab].map(([n, d, p]) =>
+        `<div class="flex justify-between gap-4 border-b border-dashed border-bean/20 pb-4">
+           <div><p class="font-semibold">${n}</p><p class="text-sm text-bean/60">${d}</p></div>
+           <p class="font-serif font-bold">€${p}</p></div>`).join('');
+      document.querySelectorAll('.tab').forEach(b => {
+        const on = b.dataset.tab === tab;
+        b.classList.toggle('bg-bean', on); b.classList.toggle('text-cream', on); b.classList.toggle('bg-cream', !on);
+      });
+    }
+    document.querySelectorAll('.tab').forEach(b => b.onclick = () => renderMenu(b.dataset.tab));
+    renderMenu('coffee');
+
+    const reviews = [['Best flat white in town, and the cardamom buns are dangerous.', 'Anna K.'], ['My favourite place to work in the morning. Quiet, friendly, great coffee.', 'Marek P.'], ['We booked the upstairs for a birthday brunch, everything was perfect.', 'Elena S.']];
+    let r = 0;
+    const dots = document.getElementById('dots');
+    reviews.forEach((_, i) => { const d = document.createElement('button'); d.className = 'w-2.5 h-2.5 rounded-full bg-cream/40'; d.setAttribute('aria-label', 'Review ' + (i + 1)); d.onclick = () => showReview(i); dots.appendChild(d); });
+    function showReview(i) {
+      r = i; const q = document.getElementById('review'); q.style.opacity = 0;
+      setTimeout(() => { q.textContent = '“' + reviews[i][0] + '”'; document.getElementById('reviewer').textContent = '— ' + reviews[i][1]; q.style.opacity = 1; }, 250);
+      [...dots.children].forEach((d, j) => d.className = 'w-2.5 h-2.5 rounded-full ' + (j === i ? 'bg-cream' : 'bg-cream/40'));
+    }
+    showReview(0); setInterval(() => showReview((r + 1) % reviews.length), 6000);
+
+    const hours = { 0: [9, 15], 1: [7.5, 19], 2: [7.5, 19], 3: [7.5, 19], 4: [7.5, 19], 5: [7.5, 19], 6: [9, 18] };
+    const now = new Date(), h = now.getHours() + now.getMinutes() / 60, [o, c] = hours[now.getDay()];
+    const open = h >= o && h < c, el = document.getElementById('openNow');
+    el.textContent = open ? '● Open now' : '● Closed now';
+    el.className += open ? ' bg-moss/15 text-moss' : ' bg-bean/10 text-bean';
+
+    document.getElementById('menuBtn').onclick = () => { const m = document.getElementById('mobileMenu'); m.classList.toggle('hidden'); m.classList.toggle('flex'); };
+    document.getElementById('contactForm').onsubmit = e => { e.preventDefault(); e.target.reset(); document.getElementById('formMsg').classList.remove('hidden'); };
+    document.getElementById('year').textContent = now.getFullYear();
+  </script>
+</body>
+</html>
